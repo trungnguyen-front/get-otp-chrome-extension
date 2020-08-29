@@ -1,9 +1,9 @@
 {
   "manifest_version": 2,
-  "name": "Boilerplate extension",
-  "author": "Trung Nguyen - Kenny",
-  "version": "0.0.1",
-  "description": "Replace new tab screen with GitHub trending projects.",
+  "name": "Captain Mochi",
+  "author": "Nguyen Duc Trung - Kenny Nguyen",
+  "version": "1.0.0",
+  "description": "Utility for getting OTP",
   "icons": {
     "128": "128.png",
     "48": "48.png",
@@ -17,5 +17,5 @@
   "browser_action": {
     "default_popup": "index.html"
   },
-  "permissions": ["notifications", "https://*/"]
+  "permissions": ["https://*/",  "storage"]
 }

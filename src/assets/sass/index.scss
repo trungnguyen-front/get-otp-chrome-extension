@@ -4,12 +4,32 @@
     flex-flow: column;
     padding: 1rem;
     .otp{
-      min-height: 2rem;
+      min-height: 5rem;
       p {
         font-size: 2rem;
         text-align: center;
         margin: 0;
       }
+    }
+  }
+}
+
+.phone {
+  &-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+  }
+  &-input {
+    width: 125px;
+    height: 32px;
+    border: 1px solid #52575D;
+    font-size: 16px;
+    padding: 4px 16px;
+    color: #41444B;
+    text-align: center;
+    &:disabled {
+      background: #D3D2D2;
     }
   }
 }
@@ -24,12 +44,43 @@
     border-color: transparent;
     cursor: pointer;
     margin-bottom: .5rem;
+    font-size: 20px;
     &:hover {
       background-color: #F9D858;
     }
     &:disabled {
       color: #899197;
       background-color: #D3D2D2;
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+  &-secondary {
+    border-radius: 12px;
+    padding: 4px 16px;
+    color: #E9E9E9;
+    font-size: 20px;
+    cursor: pointer;
+    border: none;
+    &:disabled {
+      color: #899197;
+      background-color: #D3D2D2;
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+  &-edit {
+    background: #07689F;
+    &:hover {
+      background: rgba(#07689F,.8);
+    }
+  }
+  &-save {
+    background: #40A8C4;
+    &:hover {
+      background: rgba(#40A8C4,.8);
     }
   }
 }
