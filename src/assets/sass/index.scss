@@ -1,0 +1,35 @@
+.app {
+  &-container {
+    display: flex;
+    flex-flow: column;
+    padding: 1rem;
+    .otp{
+      min-height: 2rem;
+      p {
+        font-size: 2rem;
+        text-align: center;
+        margin: 0;
+      }
+    }
+  }
+}
+
+.btn {
+  &-primary {
+    min-width: 250px;
+    height: 48px;
+    border-radius: 40px;
+    color: #231F20;
+    background-color: #FFCC00;
+    border-color: transparent;
+    cursor: pointer;
+    margin-bottom: .5rem;
+    &:hover {
+      background-color: #F9D858;
+    }
+    &:disabled {
+      color: #899197;
+      background-color: #D3D2D2;
+    }
+  }
+}

@@ -4,8 +4,8 @@ import {
   postSlackMessageService,
 } from "./services";
 import { getChannel, getThreadMessageId } from "./selectors";
-import {delay, getTextFromBot} from "./helpers";
-import {BOT_NAME, DELAY_TIME} from "./config";
+import { delay, getTextFromBot } from "./helpers";
+import { BOT_NAME, DELAY_TIME } from "./config";
 
 export const getOtp = async (phone = "0716163120") => {
   const message = `!sms get otp ${phone}`;
@@ -29,20 +29,27 @@ function App() {
       setTs(ts);
       await delay(DELAY_TIME);
       const messages = await getAllThreadMessageService({ channel, ts });
-      setOtp(getTextFromBot(messages,BOT_NAME.TEST));
+      setOtp(getTextFromBot(messages, BOT_NAME.TEST));
     } catch (error) {
       setOtp("Error");
     }
     setIsLoading(false);
   };
 
-
   return (
-    <div className="App">
-      <header className="App-header">
-        <button onClick={handleRequest} disabled={isLoading}>{isLoading ? "Loading..." : 'Get OTP'}</button>
-          {otp}
-      </header>
+    <div className="app">
+      <div className="app-container">
+        <button
+          className="btn-primary"
+          onClick={handleRequest}
+          disabled={isLoading}
+        >
+          {isLoading ? "Loading..." : "Get OTP"}
+        </button>
+        <div className="otp">
+          <p>{otp}</p>
+        </div>
+      </div>
     </div>
   );
 }

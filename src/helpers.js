@@ -18,7 +18,12 @@ export const findBot = (messages, botName) => {
     return name === botName;
   });
 };
+export const extractOTP = message => {
+  const formatMessage = message.replace(/(\r\n|\n|\r)/gm, "");
+  const start = formatMessage.indexOf('Use OTP') + 8;
+  return formatMessage.substr(start, 4);
+}
 export const getTextFromBot = (messages, botName) => {
   const bot = findBot(messages, botName);
-  return bot ? bot.text : "";
+  return bot ? extractOTP(bot.text) : "";
 };
