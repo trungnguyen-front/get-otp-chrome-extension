@@ -41,6 +41,7 @@ function App() {
       setTs(ts);
       await delay(DELAY_TIME);
       const messages = await getAllThreadMessageService({ channel, ts });
+      console.log('=== messages', messages)
       setOtpTest(getTextFromBot(messages, BOT_NAME.TEST));
       setOtpStaging(getTextFromBot(messages, BOT_NAME.STAGING));
     } catch (error) {
@@ -100,8 +101,8 @@ function App() {
           {isLoading ? "Getting..." : "Get OTP"}
         </button>
         <div className="otp">
-          {otpTest && <p>SIT ${otpTest}</p>}
-          {otpStaging && <p>SIT ${otpStaging}</p>}
+          {otpTest && <p>TEST {otpTest}</p>}
+          {otpStaging && <p>STAGING {otpStaging}</p>}
         </div>
       </div>
     </div>

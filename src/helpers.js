@@ -11,7 +11,7 @@ import { PHONE_KEY_STORAGE } from "./config";
 // };
 export const delay = (ms) => new Promise((res) => setTimeout(res, ms));
 export const findBot = (messages, botName) => {
-  return messages.find((message) => {
+  return messages.find(message => {
     const {
       bot_profile: { name },
     } = message;
@@ -20,8 +20,8 @@ export const findBot = (messages, botName) => {
 };
 export const extractOTP = (message) => {
   const formatMessage = message.replace(/(\r\n|\n|\r)/gm, "");
-  const start = formatMessage.indexOf("Use OTP") + 8;
-  return formatMessage.substr(start, 4);
+  const find = formatMessage.indexOf("Use OTP");
+  return find < 0  ? '' : formatMessage.substr(find + 8, 4);
 };
 export const getTextFromBot = (messages, botName) => {
   const bot = findBot(messages, botName);
